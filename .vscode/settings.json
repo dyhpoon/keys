@@ -1,0 +1,14 @@
+{
+  "editor.rulers": [80],
+  "files.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/build": true
+  },
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "javascript.validate.enable": false,
+  "jest.pathToJest": "yarn jest --",
+  "prettier.eslintIntegration": true,
+  "eslint.validate": ["typescript"]
+}
