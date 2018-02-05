@@ -24,8 +24,7 @@ function _has(context: any, prop: string | number) {
  * @param {Function} pred
  * @return {Array}
  */
-function _objectKeys(target: any, pred?: Function) {
-  pred = pred || _has
+function _objectKeys(target: any, pred: Function = _has) {
   var results = []
   for (var key in target) {
     if (pred(target, key)) {
