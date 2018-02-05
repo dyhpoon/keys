@@ -1,7 +1,8 @@
 {
   "name": "@dyhpoon/keys",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/keys-cjs.js",
+  "module": "dist/keys-es.js",
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
@@ -25,9 +26,7 @@
     "typescript-eslint-parser": "^12.0.0"
   },
   "jest": {
-    "testMatch": [
-      "**/src/**/*.test.ts"
-    ],
+    "testMatch": ["**/src/**/*.test.ts"],
     "mapCoverage": true,
     "coverageThreshold": {
       "global": {

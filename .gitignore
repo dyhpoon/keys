@@ -3,7 +3,7 @@
 *.sw*
 *~
 node_modules
-
+dist
 coverage
 lerna-debug.log
 npm-debug.log
