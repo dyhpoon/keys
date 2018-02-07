@@ -3,6 +3,19 @@ const strCharAt = String.prototype.charAt
 const toStr = String.prototype.toString
 
 /**
+ * returns the character at a give index.
+ *
+ * @name charAt
+ * @api private
+ * @param {string} str
+ * @param {number} index
+ * @return {string}
+ */
+function _charAt(str: string, index: number): string {
+  return strCharAt.call(str, index)
+}
+
+/**
  * hasOwnProperty, wrapped as a function
  *
  * @name has
@@ -13,6 +26,33 @@ const toStr = String.prototype.toString
  */
 function _has(context: any, prop: string | number) {
   return hop.call(context, prop)
+}
+
+/**
+ * Returns true if a value is a string, otherwise false.
+ *
+ * @name isString
+ * @api private
+ * @param {*} val
+ * @return {boolean}
+ */
+function _isString(val: any) {
+  return toStr.call(val === '[object String]')
+}
+
+/**
+ * @name indexKeys
+ * @api private
+ * @param {Array} target
+ * @param {Function} pred
+ * @returns {Array}
+ */
+function _indexKey(target: any[], pred: Function = _has) {
+  var results = []
+  for (let i = 0, len = target.length; i < len; i++) {
+    if (pred(target, i)) results.push(String(i))
+  }
+  return results
 }
 
 /**
